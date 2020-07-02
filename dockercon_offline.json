@@ -1,0 +1,137 @@
+{
+    "tst": {
+
+        "general_binds": "",
+        "dns_server": ["192.168.8.4", "192.168.8.3", "100.100.2.136", "100.100.2.138"],
+        "nginx_ip": ["172.16.5.3","172.16.6.14"],
+        "eureka_url": "eureka.tst.domanin.cn",
+        "eureka_user": "username",
+        "eureka_password": "eureka_password",
+        "module_dict2": {
+            "api-gateway":["tst-api-gateway-1","tst-api-gateway-2"],
+            "basicinfo":["tst-basicinfo-1"],
+            "mweeapi":["tst-mweeapi-1"]
+        },
+
+        "container_inf":{
+
+            "tst-api-gateway-1": {
+                "module_name": "api-gateway",
+                "homed_ip": "172.16.5.3",
+                "net_name": "dev-net-532",
+                "ip": "10.0.5.132",
+                "nat_port": "{8888:15505}",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/api-gateway/:/choice/logs/api-gateway:rw"
+            },
+
+            "tst-basicinfo-1": {
+                "module_name": "basicinfo",
+                "homed_ip": "172.16.5.3",
+                "net_name": "dev-net-532",
+                "ip": "10.0.5.130",
+                "nat_port": "{8888:15501}",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/basicinfo/:/choice/logs/basicinfo:rw"
+            },
+
+            "tst-mweeapi-1": {
+                "module_name": "mweeapi",
+                "homed_ip": "172.16.5.3",
+                "net_name": "dev-net-532",
+                "ip": "10.0.5.133",
+                "nat_port": "{8888:15502}",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/mweeapi/:/choice/logs/mwee-openapi:rw"
+            }
+
+        }
+    },
+
+    "pre": {
+        "general_binds": "",
+        "dns_server": ["192.168.8.4", "192.168.8.3", "100.100.2.136", "100.100.2.138"],
+        "nginx_ip": ["172.16.1.4"],
+        "eureka_url": "eureka.pre.domanin.cn",
+        "eureka_user": "username",
+        "eureka_password": "eureka_password",
+        "module_dict2": {
+            "basemember":["pre-basemember-1","pre-basemember-2"],
+            "api-gateway":["pre-api-gateway-1","pre-api-gateway-2"],
+            "basicinfo":["pre-basicinfo-1","pre-basicinfo-2"]
+        },
+
+        "container_inf":{
+
+
+            "pre-api-gateway-1": {
+                "module_name": "api-gateway",
+                "homed_ip": "172.16.1.4",
+                "net_name": "pre-net",
+                "ip": "10.0.6.2",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/api-gateway/:/choice/logs/api-gateway:rw"
+            },
+
+            "pre-basemember-1": {
+                "module_name": "basemember",
+                "homed_ip": "172.16.1.4",
+                "net_name": "pre-net",
+                "ip": "10.0.6.3",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/basemember/:/choice/logs/basemember:rw"
+            },
+
+
+            "pre-basicinfo-1": {
+                "module_name": "basicinfo",
+                "homed_ip": "172.16.1.4",
+                "net_name": "pre-net",
+                "ip": "10.0.6.4",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/basicinfo/:/choice/logs/basicinfo:rw"
+            },
+
+
+            "pre-api-gateway-2": {
+                "module_name": "api-gateway",
+                "homed_ip": "172.16.1.5",
+                "net_name": "pre-net",
+                "ip": "10.0.6.66",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/api-gateway/:/choice/logs/api-gateway:rw"
+            },
+
+            "pre-basemember-2": {
+                "module_name": "basemember",
+                "homed_ip": "172.16.1.5",
+                "net_name": "pre-net",
+                "ip": "10.0.6.67",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/basemember/:/choice/logs/basemember:rw"
+            },
+
+            "pre-basicinfo-2": {
+                "module_name": "basicinfo",
+                "homed_ip": "172.16.1.5",
+                "net_name": "pre-net",
+                "ip": "10.0.6.68",
+                "memory": "3g",
+                "syslog_address": "tcp://172.16.5.1:514",
+                "custom_binds": "/opt/volumes/basicinfo/:/choice/logs/basicinfo:rw"
+            }
+
+        }
+
+    }
+
+
+}
